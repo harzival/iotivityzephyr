@@ -1,0 +1,33 @@
+cd unisense
+mkdir uniport
+cd uniport
+mkdir src
+touch src/main.c
+ -- added hello world example code
+touch CMakeLists.txt
+ -- added sample CMakeLists content from https://docs.zephyrproject.org/latest/application/index.html
+
+export ZEPHYR_TOOLCHAIN_VARIANT="espressif"
+export ZEPHYR_SDK_INSTALL_DIR="${HOME}/zephyr-sdk-0.10.3"
+export ESPRESSIF_TOOLCHAIN_PATH="${HOME}/.espressif/tools/xtensa-esp32-elf/esp-2019r2-8.2.0/xtensa-esp32-elf"
+export ESP_IDF_PATH="${HOME}/dev/esp/esp-idf"
+
+source ../../zephyrproject/zephyr/zephyr-env.sh
+ -- (sets up ZEPHYR_BASE env var)
+
+west build -b esp32
+
+west flash -d build/ --skip-rebuild --esp-device /dev/ttyUSB0
+
+screen /dev/ttyUSB0 115200
+ -- Ctrl-a + \ + y = kill screen
+ -- Ctrl-a + d = detach
+ -- $ screen -r 
+ --  -- (reattach)
+
+git submodule add https://github.com/iotivity/iotivity-lite.git iotivity-lite
+git submodule update --init --recursive
+
+cp -r iotivity-lite/port/zephyr/src* src/adapter/
+cp -r iotivity-lite/port/zephyr/prj.conf prj.conf
+

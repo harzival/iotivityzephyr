@@ -1,0 +1,4 @@
+https://docs.zephyrproject.org/latest/getting_started/index.html
+https://docs.zephyrproject.org/latest/boards/xtensa/esp32/doc/index.html
+https://docs.zephyrproject.org/latest/application/index.html
+https://docs.zephyrproject.org/latest/guides/modules.html#modules
