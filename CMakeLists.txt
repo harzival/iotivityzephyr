@@ -1,0 +1,130 @@
+# Boilerplate code, which pulls in the Zephyr build system.
+cmake_minimum_required(VERSION 3.13.1)
+include($ENV{ZEPHYR_BASE}/cmake/app/boilerplate.cmake NO_POLICY_SCOPE)
+project(uniport)
+
+# Add your source file to the "app" target. This must come after
+# the boilerplate code, which defines the target.
+target_sources(app
+    PRIVATE 
+        src/main.c
+        iotivity-lite/port/zephyr/src/abort.c
+        iotivity-lite/port/zephyr/src/clock.c
+        iotivity-lite/port/zephyr/src/ipadapter.c
+        iotivity-lite/port/zephyr/src/random.c
+        iotivity-lite/port/zephyr/src/storage.c
+        iotivity-lite/deps/tinycbor/src/cborencoder_close_container_checked.c
+        iotivity-lite/deps/tinycbor/src/cborencoder.c
+        iotivity-lite/deps/tinycbor/src/cborparser.c
+        iotivity-lite/messaging/coap/engine.c
+        iotivity-lite/messaging/coap/coap.c
+        iotivity-lite/messaging/coap/transactions.c
+        iotivity-lite/messaging/coap/separate.c
+        iotivity-lite/messaging/coap/observe.c
+        iotivity-lite/util/oc_memb.c
+        iotivity-lite/util/oc_etimer.c
+        iotivity-lite/util/oc_list.c
+        iotivity-lite/util/oc_process.c
+        iotivity-lite/util/oc_timer.c
+        iotivity-lite/util/oc_mmem.c
+        iotivity-lite/api/oc_discovery.c
+        iotivity-lite/api/oc_main.c
+        iotivity-lite/api/oc_buffer.c
+        iotivity-lite/api/oc_server_api.c
+        iotivity-lite/api/oc_client_api.c
+        iotivity-lite/api/oc_helpers.c
+        iotivity-lite/api/oc_ri.c
+        iotivity-lite/api/oc_rep.c
+        iotivity-lite/api/oc_uuid.c
+        iotivity-lite/api/oc_endpoint.c
+        iotivity-lite/api/oc_core_res.c
+        iotivity-lite/api/oc_network_events.c
+        iotivity-lite/api/oc_blockwise.c
+        iotivity-lite/api/oc_base64.c 
+        iotivity-lite/deps/mbedtls/library/aes.c
+        aes.c
+iotivity-lite/deps/mbedtls/library/aesni.c
+iotivity-lite/deps/mbedtls/library/arc4.c
+iotivity-lite/deps/mbedtls/library/aria.c
+iotivity-lite/deps/mbedtls/library/asn1parse.c
+iotivity-lite/deps/mbedtls/library/asn1write.c
+iotivity-lite/deps/mbedtls/library/base64.c
+iotivity-lite/deps/mbedtls/library/bignum.c
+iotivity-lite/deps/mbedtls/library/blowfish.c
+iotivity-lite/deps/mbedtls/library/camellia.c
+iotivity-lite/deps/mbedtls/library/ccm.c
+iotivity-lite/deps/mbedtls/library/certs.c
+iotivity-lite/deps/mbedtls/library/chacha20.c
+iotivity-lite/deps/mbedtls/library/chachapoly.c
+iotivity-lite/deps/mbedtls/library/cipher.c
+iotivity-lite/deps/mbedtls/library/cipher_wrap.c
+iotivity-lite/deps/mbedtls/library/cmac.c
+ctr_drbg.c
+debug.c
+des.c
+dhm.c
+ecdh.c
+ecdsa.c
+ecjpake.c
+ecp.c
+ecp_curves.c
+entropy.c
+entropy_poll.c
+error.c
+gcm.c
+havege.c
+hkdf.c
+hmac_drbg.c
+Makefile
+md2.c
+md4.c
+md5.c
+md.c
+md_wrap.c
+memory_buffer_alloc.c
+net_sockets.c
+nist_kw.c
+oid.c
+padlock.c
+pem.c
+pk.c
+pkcs11.c
+pkcs12.c
+pkcs5.c
+pkparse.c
+pk_wrap.c
+pkwrite.c
+platform.c
+platform_util.c
+poly1305.c
+ripemd160.c
+rsa.c
+rsa_internal.c
+sha1.c
+sha256.c
+sha512.c
+ssl_cache.c
+ssl_ciphersuites.c
+ssl_cli.c
+ssl_cookie.c
+ssl_srv.c
+ssl_ticket.c
+ssl_tls.c
+threading.c
+timing.c
+version.c
+version_features.c
+x509.c
+x509_create.c
+x509_crl.c
+x509_crt.c
+x509_csr.c
+x509write_crt.c
+x509write_csr.c
+xtea.c
+        
+        
+        
+        
+       
+)
